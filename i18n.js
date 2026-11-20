@@ -1025,7 +1025,8 @@ var I18N = {
     "b_0984": "Vardorvis (from $0.24, 3 opciones).",
     "b_0985": "Venenatis (from $0.34, 2 opciones).",
     "b_0986": "Vet'ion (from $0.33, 2 opciones).",
-    "b_0987": "Zalcano (from $0.22, 3 opciones)."
+    "b_0987": "Zalcano (from $0.22, 3 opciones).",
+    "b_0988": "<strong>Canal:</strong> #💲all-prices💲 — https://ptb.discord.com/channels/1257655338769842300/1300394536362836031"
   },
   "en": {
     "brand": "OSRS Price Comparison",
@@ -2048,7 +2049,8 @@ var I18N = {
     "b_0984": "Vardorvis (from $0.24, 3 options).",
     "b_0985": "Venenatis (from $0.34, 2 options).",
     "b_0986": "Vet'ion (from $0.33, 2 options).",
-    "b_0987": "Zalcano (from $0.22, 3 options)."
+    "b_0987": "Zalcano (from $0.22, 3 options).",
+    "b_0988": "<strong>Channel:</strong> #💲all-prices💲 — https://ptb.discord.com/channels/1257655338769842300/1300394536362836031"
   },
   "ar": {
     "brand": "مقارنة أسعار OSRS",
@@ -3071,7 +3073,8 @@ var I18N = {
     "b_0984": "Vardorvis (from $0.24, 3 opciones).",
     "b_0985": "Venenatis (from $0.34, 2 opciones).",
     "b_0986": "Vet'ion (from $0.33, 2 opciones).",
-    "b_0987": "Zalcano (from $0.22, 3 opciones)."
+    "b_0987": "Zalcano (from $0.22, 3 opciones).",
+    "b_0988": "<strong>Canal:</strong> #💲all-prices💲 — https://ptb.discord.com/channels/1257655338769842300/1300394536362836031"
   }
 };
 
