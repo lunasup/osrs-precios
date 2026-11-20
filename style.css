@@ -1,0 +1,146 @@
+/* Comparación de precios OSRS — tema oscuro, sin dependencias externas */
+:root {
+  --bg: #12141a;
+  --bg2: #1a1d26;
+  --surface: #1e222e;
+  --border: #333948;
+  --text: #e8eaf0;
+  --muted: #a7adc0;
+  --accent: #f0b429;
+  --accent2: #7cc4ff;
+  --link: #8ecbff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+/* Cabecera y navegación fija */
+.top {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+}
+.top .wrap {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px;
+  padding-top: 10px; padding-bottom: 10px;
+}
+.brand {
+  color: var(--accent); font-weight: 700; text-decoration: none;
+  font-size: 1.05rem; margin-right: 8px; white-space: nowrap;
+}
+.top nav { display: flex; flex-wrap: wrap; gap: 2px 4px; }
+.top nav a {
+  color: var(--text); text-decoration: none;
+  padding: 4px 10px; border-radius: 6px; font-size: 0.95rem;
+}
+.top nav a:hover { background: var(--surface); color: var(--accent); }
+
+main { padding: 24px 16px 48px; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0.4em 0 0.6em; }
+h2 {
+  font-size: 1.3rem; margin-top: 1.8em;
+  border-bottom: 1px solid var(--border); padding-bottom: 0.25em;
+}
+h3 { font-size: 1.12rem; margin-top: 1.5em; color: var(--accent); }
+h4 { font-size: 1rem; margin-top: 1.2em; }
+a { color: var(--link); }
+a:hover { text-decoration: underline; }
+code {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 4px; padding: 0 4px; font-size: 0.9em;
+}
+pre {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px; overflow-x: auto;
+}
+pre code { border: 0; padding: 0; background: none; }
+blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 1em 0; padding: 0.2em 1em; color: var(--muted);
+  background: var(--surface); border-radius: 0 8px 8px 0;
+}
+hr { border: 0; border-top: 1px solid var(--border); margin: 2em 0; }
+img { max-width: 100%; height: auto; }
+
+/* Tablas */
+table {
+  width: 100%; border-collapse: collapse;
+  margin: 1em 0; font-size: 0.95rem; display: block; overflow-x: auto;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 6px 10px; text-align: left; vertical-align: top;
+}
+th { background: var(--surface); color: var(--accent); white-space: nowrap; }
+tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
+ul, ol { padding-left: 1.4em; }
+li { margin: 0.25em 0; }
+
+/* Buscador */
+.buscador { margin: 1em 0 1.5em; }
+.buscador label { display: block; font-weight: 600; margin-bottom: 6px; }
+.buscador input {
+  width: 100%; max-width: 480px;
+  padding: 10px 12px; font-size: 1rem;
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-radius: 8px;
+}
+.buscador input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+.sin-resultados { color: var(--accent); font-weight: 600; }
+
+/* Tarjetas de la portada */
+.cards {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px; margin-top: 1em;
+}
+.card {
+  display: block; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px 16px; text-decoration: none; color: var(--text);
+}
+.card:hover { border-color: var(--accent); text-decoration: none; }
+.card strong { display: block; color: var(--accent); font-size: 1.05rem; }
+.card span { color: var(--muted); font-size: 0.92rem; }
+
+/* Selector de idioma */
+.lang-switch { margin-inline-start: auto; display: flex; gap: 4px; }
+.lang-switch button {
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-radius: 6px;
+  padding: 4px 10px; font-size: 0.9rem; cursor: pointer;
+  font-family: inherit;
+}
+.lang-switch button:hover { border-color: var(--accent); color: var(--accent); }
+.lang-switch button.active {
+  background: var(--accent); border-color: var(--accent);
+  color: #12141a; font-weight: 700;
+}
+
+/* Ajustes para árabe (RTL): la dirección la pone i18n.js en <html> */
+[dir="rtl"] blockquote {
+  border-left: 0; border-right: 3px solid var(--accent);
+  border-radius: 8px 0 0 8px;
+}
+[dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+[dir="rtl"] ul, [dir="rtl"] ol { padding-left: 0; padding-right: 1.4em; }
+
+footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted); font-size: 0.88rem;
+  padding: 18px 16px 32px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  h1 { font-size: 1.4rem; }
+  .brand { font-size: 1rem; }
+  .top nav a { padding: 4px 7px; font-size: 0.9rem; }
+  th, td { padding: 5px 7px; font-size: 0.9rem; }
+}
