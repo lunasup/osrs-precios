@@ -23,6 +23,12 @@
 <main class="wrap">
   <h1 data-i18n="h1_index">Comparación de precios OSRS</h1>
   
+<div class="buscador">
+  <label for="buscar" data-i18n="search_label">Buscar en esta página:</label>
+  <input type="search" id="buscar" placeholder="Ej.: SOTE, quiver, synapse…" autocomplete="off" data-i18n-placeholder="search_placeholder">
+  <p id="sin-resultados" class="sin-resultados" style="display:none" data-i18n="search_noresults">Sin resultados para esa búsqueda.</p>
+</div>
+
   
 <p data-i18n-html="intro_p1">Comparación de precios de servicios de Old School RuneScape entre
 <strong>OSRS Machines</strong> y seis servidores de boosting (TONS of XP,
@@ -189,6 +195,20 @@ en la página de la propuesta, con addenda del 12 al 18 de noviembre de 2026.</p
   <p data-i18n="footer">Precios tal como los publica cada servidor (extracción del 9 de noviembre de 2026; addenda hasta el 19 de noviembre de 2026). Sin afiliación con ninguno de los servidores. Los precios pueden cambiar; verifica siempre en el servidor antes de cotizar.</p>
 </footer>
 <script src="i18n.js"></script>
+
+<script>
+document.getElementById('buscar').addEventListener('input', function (e) {
+  var q = e.target.value.trim().toLowerCase();
+  var shown = 0;
+  document.querySelectorAll('main li, main tbody tr, main .card').forEach(function (el) {
+    var hit = !q || el.textContent.toLowerCase().includes(q);
+    el.style.display = hit ? '' : 'none';
+    if (hit) shown++;
+  });
+  document.getElementById('sin-resultados').style.display =
+    (q && shown === 0) ? 'block' : 'none';
+});
+</script>
 
 </body>
 </html>

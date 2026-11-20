@@ -564,7 +564,7 @@
 document.getElementById('buscar').addEventListener('input', function (e) {
   var q = e.target.value.trim().toLowerCase();
   var shown = 0;
-  document.querySelectorAll('main li, main tbody tr').forEach(function (el) {
+  document.querySelectorAll('main li, main tbody tr, main .card').forEach(function (el) {
     var hit = !q || el.textContent.toLowerCase().includes(q);
     el.style.display = hit ? '' : 'none';
     if (hit) shown++;
