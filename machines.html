@@ -29,6 +29,7 @@
   <p id="sin-resultados" class="sin-resultados" style="display:none" data-i18n="search_noresults">Sin resultados para esa búsqueda.</p>
 </div>
 
+  
   <h1 id="osrs-machines-lista-completa-de-precios" data-i18n-html="b_0811">OSRS Machines — Lista completa de precios</h1>
 <p data-i18n-html="b_0102"><strong>Canal:</strong> #💎︱services-and-pricing — Servidor OSRS Machines 🦾
 <strong>Enlace:</strong> https://discord.com/channels/1300461970549641236/1300471271569752095
@@ -1266,11 +1267,13 @@
 </footer>
 <script src="i18n.js"></script>
 
+
 <script>
 document.getElementById('buscar').addEventListener('input', function (e) {
   var q = e.target.value.trim().toLowerCase();
   var shown = 0;
   document.querySelectorAll('main li, main tbody tr, main .card').forEach(function (el) {
+    if (el.closest && el.closest('#comparar')) return; // la tabla de comparación no se filtra
     var hit = !q || el.textContent.toLowerCase().includes(q);
     el.style.display = hit ? '' : 'none';
     if (hit) shown++;

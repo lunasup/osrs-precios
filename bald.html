@@ -29,6 +29,7 @@
   <p id="sin-resultados" class="sin-resultados" style="display:none" data-i18n="search_noresults">Sin resultados para esa búsqueda.</p>
 </div>
 
+  
   <h1 id="bald-baldgg-precios-servidor-3-de-10" data-i18n-html="b_0614">Bald / Bald.gg — Precios (servidor 3 de 10)</h1>
 <ul>
 <li data-i18n-html="b_0406"><strong>Servidor:</strong> Bald | Bald.gg (5.573 miembros).</li>
@@ -601,11 +602,13 @@ Completionist &amp; Logs:
 </footer>
 <script src="i18n.js"></script>
 
+
 <script>
 document.getElementById('buscar').addEventListener('input', function (e) {
   var q = e.target.value.trim().toLowerCase();
   var shown = 0;
   document.querySelectorAll('main li, main tbody tr, main .card').forEach(function (el) {
+    if (el.closest && el.closest('#comparar')) return; // la tabla de comparación no se filtra
     var hit = !q || el.textContent.toLowerCase().includes(q);
     el.style.display = hit ? '' : 'none';
     if (hit) shown++;

@@ -29,6 +29,7 @@
   <p id="sin-resultados" class="sin-resultados" style="display:none" data-i18n="search_noresults">Sin resultados para esa búsqueda.</p>
 </div>
 
+  
   <h1 id="propuesta-intermedia-precios-machines-vs-6-servidores-interina-6-de-10" data-i18n-html="b_0844">Propuesta intermedia — precios Machines vs 6 servidores (interina, 6 de 10)</h1>
 <p data-i18n-html="prop_fecha">Fecha: lunes 2026-11-09, 09:06 Caracas. Servidores comparados: TONS of XP, Neer Death (NDS), Bald / Bald.gg, Lorax Services, Elite Services, Kings Boosting. Precios Machines de <code>osrs-machines-precios-completos.md</code>. Conversión NDS/Elite: 1M = $0.30 (tasa de la usuaria); Lorax publica en $ con tasa interna 1M = $0.19. Kings: todo en USD, del canal #prices.</p>
 <h2 id="metodo-el-mismo-de-la-propuesta-de-5-servidores-a-validar-por-la-usuaria" data-i18n-html="prop_metodo_h">Método (el mismo de la propuesta de 5 servidores, a validar por la usuaria)</h2>
@@ -560,11 +561,13 @@
 </footer>
 <script src="i18n.js"></script>
 
+
 <script>
 document.getElementById('buscar').addEventListener('input', function (e) {
   var q = e.target.value.trim().toLowerCase();
   var shown = 0;
   document.querySelectorAll('main li, main tbody tr, main .card').forEach(function (el) {
+    if (el.closest && el.closest('#comparar')) return; // la tabla de comparación no se filtra
     var hit = !q || el.textContent.toLowerCase().includes(q);
     el.style.display = hit ? '' : 'none';
     if (hit) shown++;

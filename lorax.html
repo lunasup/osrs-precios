@@ -29,6 +29,7 @@
   <p id="sin-resultados" class="sin-resultados" style="display:none" data-i18n="search_noresults">Sin resultados para esa búsqueda.</p>
 </div>
 
+  
   <h1 id="lorax-services-precios-servidor-4-de-10" data-i18n-html="b_0747">Lorax Services — Precios (servidor 4 de 10)</h1>
 <ul>
 <li data-i18n-html="b_0409"><strong>Servidor:</strong> Lorax Services. <strong>Canal:</strong> #📜┆prices-overview — https://ptb.discord.com/channels/1245131456452235284/1451092053277671434</li>
@@ -464,11 +465,13 @@ Sin precio en miniquests (6): Bear Your Soul, Daddy'S Home, Enter The Abyss, The
 </footer>
 <script src="i18n.js"></script>
 
+
 <script>
 document.getElementById('buscar').addEventListener('input', function (e) {
   var q = e.target.value.trim().toLowerCase();
   var shown = 0;
   document.querySelectorAll('main li, main tbody tr, main .card').forEach(function (el) {
+    if (el.closest && el.closest('#comparar')) return; // la tabla de comparación no se filtra
     var hit = !q || el.textContent.toLowerCase().includes(q);
     el.style.display = hit ? '' : 'none';
     if (hit) shown++;

@@ -29,6 +29,7 @@
   <p id="sin-resultados" class="sin-resultados" style="display:none" data-i18n="search_noresults">Sin resultados para esa búsqueda.</p>
 </div>
 
+  
   <h1 id="neer-death-nds-lista-completa-de-precios" data-i18n-html="b_0791">Neer Death (NDS) — Lista completa de precios</h1>
 <p data-i18n-html="b_0410"><strong>Servidor:</strong> Neer Death (NDS) — «Neer Death Services», Level 3, Boost Goal 31/33, 5.962 miembros el 9 nov 2026.
 <strong>Canal:</strong> #┠💼entire-pricing — https://ptb.discord.com/channels/776261103847211029/984007365227601960
@@ -176,11 +177,13 @@ Ardougne: Easy 4.5m ($1.35); Med 8.5m ($2.55); Hard 9m ($2.70); Elite 8.5m ($2.5
 </footer>
 <script src="i18n.js"></script>
 
+
 <script>
 document.getElementById('buscar').addEventListener('input', function (e) {
   var q = e.target.value.trim().toLowerCase();
   var shown = 0;
   document.querySelectorAll('main li, main tbody tr, main .card').forEach(function (el) {
+    if (el.closest && el.closest('#comparar')) return; // la tabla de comparación no se filtra
     var hit = !q || el.textContent.toLowerCase().includes(q);
     el.style.display = hit ? '' : 'none';
     if (hit) shown++;

@@ -30,6 +30,10 @@
 </div>
 
   
+<div id="comparar" class="comparar" hidden></div>
+<p class="comparar-pista" data-i18n="cmp_hint">Prueba: 200 kc bandos, infernal, venator, sote…</p>
+
+  
 <p data-i18n-html="intro_p1">Comparación de precios de servicios de Old School RuneScape entre
 <strong>OSRS Machines</strong> y seis servidores de boosting (TONS of XP,
 Neer Death, Bald, Lorax, Elite Services y Kings Boosting), extraídos el
@@ -195,12 +199,14 @@ en la página de la propuesta, con addenda del 12 al 18 de noviembre de 2026.</p
   <p data-i18n="footer">Precios tal como los publica cada servidor (extracción del 9 de noviembre de 2026; addenda hasta el 19 de noviembre de 2026). Sin afiliación con ninguno de los servidores. Los precios pueden cambiar; verifica siempre en el servidor antes de cotizar.</p>
 </footer>
 <script src="i18n.js"></script>
+<script src="compare.js"></script>
 
 <script>
 document.getElementById('buscar').addEventListener('input', function (e) {
   var q = e.target.value.trim().toLowerCase();
   var shown = 0;
   document.querySelectorAll('main li, main tbody tr, main .card').forEach(function (el) {
+    if (el.closest && el.closest('#comparar')) return; // la tabla de comparación no se filtra
     var hit = !q || el.textContent.toLowerCase().includes(q);
     el.style.display = hit ? '' : 'none';
     if (hit) shown++;

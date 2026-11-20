@@ -29,6 +29,7 @@
   <p id="sin-resultados" class="sin-resultados" style="display:none" data-i18n="search_noresults">Sin resultados para esa búsqueda.</p>
 </div>
 
+  
   <h1 id="tons-of-xp-lista-completa-de-precios" data-i18n-html="b_0904">TONS of XP — Lista completa de precios</h1>
 <p data-i18n-html="b_0411"><strong>Servidor:</strong> TONS of XP — <strong>Canal:</strong> #💲prices (Discord PTB)
 <strong>Fuente:</strong> el canal publica https://tonsofxp.com/osrs-services y sus páginas de servicio; respuestas del bot TOX Pricing Bot en #price-checker y #prueba de precios.
@@ -126,11 +127,13 @@ Ejemplos del bot en #price-checker: Thieving 77–80: Wealthy Citizens $6.50 (lo
 </footer>
 <script src="i18n.js"></script>
 
+
 <script>
 document.getElementById('buscar').addEventListener('input', function (e) {
   var q = e.target.value.trim().toLowerCase();
   var shown = 0;
   document.querySelectorAll('main li, main tbody tr, main .card').forEach(function (el) {
+    if (el.closest && el.closest('#comparar')) return; // la tabla de comparación no se filtra
     var hit = !q || el.textContent.toLowerCase().includes(q);
     el.style.display = hit ? '' : 'none';
     if (hit) shown++;

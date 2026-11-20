@@ -29,6 +29,7 @@
   <p id="sin-resultados" class="sin-resultados" style="display:none" data-i18n="search_noresults">Sin resultados para esa búsqueda.</p>
 </div>
 
+  
   <h1 id="elite-services-precios-servidor-5-de-10" data-i18n-html="b_0690">Elite Services — Precios (servidor 5 de 10)</h1>
 <ul>
 <li data-i18n-html="b_0407"><strong>Servidor:</strong> Elite Services (1.288 miembros). <strong>Canal:</strong> #🔮︰prices-list — https://ptb.discord.com/channels/1300433868158930975/1300434385241374731</li>
@@ -263,11 +264,13 @@ Nota: «Search of Knowledge - 1.2M» (Mini Quests) frente a «In search of knowl
 </footer>
 <script src="i18n.js"></script>
 
+
 <script>
 document.getElementById('buscar').addEventListener('input', function (e) {
   var q = e.target.value.trim().toLowerCase();
   var shown = 0;
   document.querySelectorAll('main li, main tbody tr, main .card').forEach(function (el) {
+    if (el.closest && el.closest('#comparar')) return; // la tabla de comparación no se filtra
     var hit = !q || el.textContent.toLowerCase().includes(q);
     el.style.display = hit ? '' : 'none';
     if (hit) shown++;
