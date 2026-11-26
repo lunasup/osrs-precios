@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20",
+ "generated": "2026-11-26",
  "servers": [
   "machines",
   "tons",
@@ -14046,7 +14046,10 @@
     "machines": null,
     "tons": null,
     "neer": null,
-    "bald": null,
+    "bald": {
+     "value": 140.0,
+     "note": "Website bald.gg/guaranteed-drops, Guaranteed Specific Bandos Piece; assumes Bowfa. Parsec +50%."
+    },
     "lorax": null,
     "elite": null,
     "kings": {
@@ -14068,7 +14071,10 @@
     "machines": null,
     "tons": null,
     "neer": null,
-    "bald": null,
+    "bald": {
+     "value": 190.0,
+     "note": "Website bald.gg/guaranteed-drops, Guaranteed Specific Bandos Piece; assumes Bowfa. Parsec +50%."
+    },
     "lorax": null,
     "elite": null,
     "kings": {
@@ -14090,7 +14096,10 @@
     "machines": null,
     "tons": null,
     "neer": null,
-    "bald": null,
+    "bald": {
+     "value": 140.0,
+     "note": "Website bald.gg/guaranteed-drops, Guaranteed Specific Bandos Piece; assumes Bowfa. Parsec +50%."
+    },
     "lorax": null,
     "elite": null,
     "kings": {
@@ -15297,8 +15306,8 @@
     "tons": null,
     "neer": null,
     "bald": {
-     "value": 100.0,
-     "note": ""
+     "value": 50.0,
+     "note": "Website: Any Bandos Drop — any Bandos unique (Boots, Hilt, Chestplate, Tassets), whichever drops first. Discord listed 'Bandos item' $100, not found on the website (checked 2026-11-26)."
     },
     "lorax": null,
     "elite": null,
@@ -15321,7 +15330,7 @@
     "neer": null,
     "bald": {
      "value": 200.0,
-     "note": ""
+     "note": "Discord listing; not found on the guaranteed-drops website page (checked 2026-11-26)."
     },
     "lorax": null,
     "elite": null,
